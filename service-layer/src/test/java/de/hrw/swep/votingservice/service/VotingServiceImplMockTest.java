@@ -43,6 +43,13 @@ public class VotingServiceImplMockTest {
 		when(dbReadMock.getVotesForQuestion(2)).thenReturn(votes);
 		when(dbReadMock.getStatusOfQuestion(2)).thenReturn(false);
 
+		when(dbReadMock.getDescriptionOfQuestion(3)).thenReturn(
+				"Wie finden Sie Games of Thrones?");
+		when(dbReadMock.getVotesForQuestion(3)).thenReturn(votes);
+		when(dbReadMock.getStatusOfQuestion(3)).thenReturn(true);
+
+		
+		
 
 		votingService = new VotingServiceImpl(dbReadMock, dbWriteMock);
 	}
@@ -50,6 +57,7 @@ public class VotingServiceImplMockTest {
 	@Test
 	public void testGetAlleGerichte() {
 		//  Finde leider die richtige Stelle nicht 
+		//jdsfhkjsdfh
 
 		List<Question> questions = votingService.getAllQuestions();
 		assertEquals(3, questions.size());
